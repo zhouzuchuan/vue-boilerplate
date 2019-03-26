@@ -5,62 +5,58 @@
 module.exports = {
     packageList: [
         {
-            name: 'react-enhanced',
-            src: 'https://github.com/zhouzuchuan/react-enhanced'
+            name: 'vue-loader',
+            src: 'https://vue-loader.vuejs.org',
+        },
+        {
+            name: 'babel',
+            src: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel',
+        },
+        {
+            name: 'eslint',
+            src: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint',
+        },
+        {
+            name: 'stylelint',
+            src: 'https://github.com/stylelint/stylelintt',
         },
         {
             name: 'data-mock',
-            src: 'https://github.com/zhouzuchuan/data-mock'
+            src: 'https://github.com/zhouzuchuan/data-mock',
         },
-        {
-            name: 'ant-design',
-            src: 'https://github.com/ant-design/ant-design'
-        },
-        {
-            name: 'api-manage',
-            src: 'https://github.com/zhouzuchuan/api-manage'
-        },
-        {
-            name: 'react-router',
-            src: 'https://github.com/ReactTraining/react-router'
-        },
-        {
-            name: 'lodash',
-            src: 'https://github.com/lodash/lodash'
-        },
-        {
-            name: 'immutable',
-            src: 'https://github.com/facebook/immutable-js'
-        }
     ],
     relypackageList: [
         {
-            name: 'react',
-            src: 'https://github.com/facebook/react'
+            name: 'element-ui',
+            src: 'https://github.com/ElemeFE/element',
+        },
+        {
+            name: 'vue-router',
+            src: 'https://router.vuejs.org',
+        },
+        {
+            name: 'api-manage',
+            src: 'https://github.com/zhouzuchuan/api-manage',
         },
         {
             name: 'axios',
-            src: 'https://github.com/axios/axios'
+            src: 'https://github.com/axios/axios',
         },
         {
-            name: 'redux',
-            src: 'https://github.com/reduxjs/redux'
+            name: 'model-redux',
+            src: 'https://github.com/zhouzuchuan/model-redux',
         },
         {
-            name: 'react-redux',
-            src: 'https://github.com/reduxjs/react-redux'
+            name: 'awesome-vue',
+            src: 'https://github.com/vuejs/awesome-vue',
         },
         {
-            name: 'redux-saga',
-            src: 'https://github.com/redux-saga/redux-saga'
+            name: 'lodash',
+            src: 'https://github.com/lodash/lodash',
         },
         {
-            name: 'redux-observable',
-            src: 'https://github.com/redux-observable/redux-observable'
+            name: 'vue-devtools',
+            src: 'https://github.com/vuejs/vue-devtools#vue-devtools',
         },
-        {
-            name: 'mockjs',
-            src: 'https://github.com/nuysoft/Mock'
-        }
-    ]
+    ],
 }

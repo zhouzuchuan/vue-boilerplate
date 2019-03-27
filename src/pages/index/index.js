@@ -6,6 +6,8 @@ import axios from 'axios'
 import VueI18n from 'vue-i18n'
 import ElementUI from 'element-ui'
 import ElementLocale from 'element-ui/lib/locale'
+import 'normalize.css'
+import '@/element-variables.scss'
 
 import appModel from '@m/app.js'
 import router from './router'

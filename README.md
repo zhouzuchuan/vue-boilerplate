@@ -1,29 +1,37 @@
 # vue-boilerplate
 
+基于官方 [Vue-cli](https://cli.vuejs.org) 进行二次开发定制，加入诸多三方库以及功能，方便开箱即用
+
 ## Project setup
+
 ```
-yarn install
+npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
-yarn run serve
+npm run start
 ```
 
 ### Compiles and minifies for production
+
 ```
-yarn run build
+npm run build
 ```
 
 ### Run your tests
+
 ```
-yarn run test
+npm run test
 ```
 
 ### Lints and fixes files
+
 ```
-yarn run lint
+npm run lint
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -10,8 +10,8 @@ module.exports = {
         index: {
             template: './public/index.html',
             entry: './src/pages/index/index.js',
-            filename: 'index.html'
-        }
+            filename: 'index.html',
+        },
     },
     lintOnSave: true, // 是否开启eslint保存检测，有效值：ture | false | 'error'
     runtimeCompiler: true, // 运行时版本是否需要编译
@@ -37,9 +37,9 @@ module.exports = {
                     '@p': path.resolve(__dirname, './src/pages'),
                     '@c': path.resolve(__dirname, './src/components'),
                     '@u': path.resolve(__dirname, './src/utils'),
-                    vue$: 'vue/dist/vue.esm.js'
-                }
-            }
+                    vue$: 'vue/dist/vue.esm.js',
+                },
+            },
         })
     },
     chainWebpack: () => {
@@ -59,10 +59,10 @@ module.exports = {
             // css预设器配置项
             css: {
                 localIdentName: '[name]-[hash]',
-                camelCase: 'only'
+                camelCase: 'only',
             },
-            stylus: {}
-        }
+            stylus: {},
+        },
     },
     parallel: require('os').cpus().length > 1, // 构建时开启多进程处理babel编译
     pluginOptions: {
@@ -81,8 +81,8 @@ module.exports = {
             bindServer({
                 server,
                 target: path.resolve(__dirname, './src/mocks/'),
-                watchTarget: path.resolve(__dirname, '../src/api/')
+                watchTarget: path.resolve(__dirname, '../src/api/'),
             })
-        }
-    }
+        },
+    },
 }

@@ -1,23 +1,22 @@
 import Vue from 'vue'
-import modelRedux from 'model-redux'
+import Vuex from 'vuex'
 import apiManage from 'api-manage'
 import nprogress from 'nprogress'
 import axios from 'axios'
 import VueI18n from 'vue-i18n'
 import ElementUI from 'element-ui'
 import ElementLocale from 'element-ui/lib/locale'
+import createPersistedState from 'vuex-persistedstate'
 import 'normalize.css'
 import '@/element-variables.scss'
 
-import appModel from '@m/app.js'
+import app from '@m/app.js'
 import router from './router'
 import App from './App.vue'
 
 import i18nConfig from '@/i18n.config.js'
 
-const { store, registerModel } = modelRedux.create()
-
-Vue.prototype.$dispatch = store.dispatch
+Vue.use(Vuex)
 
 // 注入element-ui 组件以及国际化
 Vue.use(VueI18n)
@@ -29,9 +28,6 @@ ElementLocale.i18n((key, value) => i18n.t(key, value))
 Vue.use(ElementUI, {
     i18n: (key, value) => i18n.t(key, value),
 })
-
-// 注册model
-registerModel(appModel)
 
 // 请求统一处理
 const service = axios.create({
@@ -49,17 +45,30 @@ router.afterEach(() => {
     nprogress.done() // 结束Progress
 })
 
-// 注入api
-Vue.prototype.$service = apiManage.init({
+const serviceList = apiManage.init({
     request: service,
     list: require('@/api'),
 })
+// 注入api
+Vue.prototype.$service = serviceList
 
 Vue.config.productionTip = false
 
 new Vue({
     i18n,
     router,
-    store,
+    store: new Vuex.Store({
+        // models函数化 注入serve化 api
+        modules: Object.entries({ app }).reduce(
+            (r, [k, v]) => ({ ...r, [k]: typeof v === 'function' ? v(serviceList) : v }),
+            {},
+        ),
+        plugins: [
+            // vuex数据持久化
+            createPersistedState({
+                storage: window.sessionStorage,
+            }),
+        ],
+    }),
     render: h => h(App),
 }).$mount('#app')

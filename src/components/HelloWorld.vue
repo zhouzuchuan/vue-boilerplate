@@ -7,7 +7,7 @@
     </p>
     <h3>{{$tc('title', 0)}}</h3>
     <ul>
-      <li v-for="a in cliList" :key="a.name">
+      <li v-for="a in packageList[0]" :key="a.name">
         <a :href="a.src" target="_blank" rel="noopener">{{a.name}}</a>
       </li>
     </ul>
@@ -31,7 +31,7 @@
     </ul>
     <h3>{{$tc('title', 2)}}</h3>
     <ul>
-      <li v-for="a in packageList" :key="a.name">
+      <li v-for="a in packageList[1]" :key="a.name">
         <a :href="a.src" target="_blank" rel="noopener">{{a.name}}</a>
       </li>
     </ul>
@@ -40,29 +40,23 @@
 
 <script>
 
+import { mapActions, mapState } from 'vuex'
 
 
 
 
 export default {
   name: 'HelloWorld',
-  data() {
-    return {
-      cliList: [],
-      packageList: []
-    }
-  },
+  computed: mapState('app', ['packageList']),
+  methods: mapActions('app', ['getList']),
   created() {
-    this.$service.serveGetPackageList().then(({ data }) => {
-      this.cliList = data.result[0]
-      this.packageList = data.result[1]
-    })
+    this.getList()
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="less">
+<style scoped lang="less"   >
 a {
     color: #42b983;
 }

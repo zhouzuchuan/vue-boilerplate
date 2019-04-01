@@ -1,6 +1,6 @@
 {
     "name": "vue-boilerplate",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "private": true,
     "scripts": {
         "start": "vue-cli-service serve",
@@ -10,20 +10,23 @@
         "test:unit": "vue-cli-service test:unit"
     },
     "dependencies": {
-        "api-manage": "^0.3.0",
+        "api-manage": "^0.4.0",
         "core-js": "^2.6.5",
         "element-ui": "^2.7.0",
+        "file-saver": "^2.0.1",
         "js-cookie": "^2.2.0",
         "jszip": "^3.2.1",
         "lodash": "^4.17.11",
-        "model-redux": "^1.2.0",
         "moment": "^2.24.0",
         "normalize.css": "^8.0.1",
         "nprogress": "^0.2.0",
         "vue": "^2.6.6",
         "vue-echarts": "^4.0.1",
         "vue-i18n": "^8.10.0",
-        "vue-router": "^3.0.2"
+        "vue-router": "^3.0.2",
+        "vue-rx": "^6.1.0",
+        "vuex": "^3.1.0",
+        "vuex-persistedstate": "^2.5.4"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "^3.5.0",

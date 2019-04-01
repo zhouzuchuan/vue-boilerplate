@@ -5,14 +5,14 @@ const {
         api: { apiGetPackageList },
         relypackageList,
         packageList,
-        returnAcition
-    }
+        returnAcition,
+    },
 } = global
 
 module.exports = {
     [apiGetPackageList]: (req, res) => {
         returnAcition(res, {
-            result: [packageList, relypackageList]
+            result: [packageList, relypackageList],
         })
-    }
+    },
 }

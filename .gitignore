@@ -20,11 +20,8 @@ yarn-error.log*
 *.sln
 *.sw*
 
- 
 
-*.lock
+
+/coverage
+
 yarn.lock
- 
-package-lock.json
-
-.DS_Store

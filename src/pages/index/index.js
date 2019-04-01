@@ -17,7 +17,7 @@ import i18nConfig from '@/i18n.config.js'
 
 const { store, registerModel } = modelRedux.create()
 
-Vue.prototype.dispatch = store.dispatch
+Vue.prototype.$dispatch = store.dispatch
 
 // 注入element-ui 组件以及国际化
 Vue.use(VueI18n)

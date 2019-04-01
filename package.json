@@ -1,36 +1,43 @@
 {
     "name": "vue-boilerplate",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "private": true,
     "scripts": {
         "start": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
-        "lint:css": "stylelint 'src/**/*.vue' --fix"
+        "lint:css": "stylelint 'src/**/*.vue' --fix",
+        "test:unit": "vue-cli-service test:unit"
     },
     "dependencies": {
         "api-manage": "^0.3.0",
-        "element-ui": "^2.5.2",
-        "lajax": "^1.1.6",
+        "core-js": "^2.6.5",
+        "element-ui": "^2.7.0",
+        "js-cookie": "^2.2.0",
+        "jszip": "^3.2.1",
         "lodash": "^4.17.11",
         "model-redux": "^1.2.0",
+        "moment": "^2.24.0",
         "normalize.css": "^8.0.1",
         "nprogress": "^0.2.0",
         "vue": "^2.6.6",
-        "vue-i18n": "^8.9.0",
+        "vue-echarts": "^4.0.1",
+        "vue-i18n": "^8.10.0",
         "vue-router": "^3.0.2"
     },
     "devDependencies": {
-        "@vue/cli-plugin-babel": "^3.3.0",
-        "@vue/cli-plugin-eslint": "^3.3.0",
-        "@vue/cli-service": "^3.3.0",
+        "@vue/cli-plugin-babel": "^3.5.0",
+        "@vue/cli-plugin-eslint": "^3.5.0",
+        "@vue/cli-plugin-unit-jest": "^3.5.3",
+        "@vue/cli-service": "^3.5.0",
+        "@vue/test-utils": "1.0.0-beta.29",
+        "babel-core": "7.0.0-bridge.0",
         "babel-eslint": "^10.0.1",
+        "babel-jest": "^23.6.0",
         "babel-plugin-component": "^1.1.1",
-        "babel-plugin-import": "^1.11.0",
-        "data-mock": "^0.3.0",
-        "eslint": "^5.12.1",
-        "eslint-plugin-html": "^5.0.0",
-        "eslint-plugin-vue": "^5.1.0",
+        "data-mock": "^1.2.1",
+        "eslint": "^5.8.0",
+        "eslint-plugin-vue": "^5.0.0",
         "less": "^3.9.0",
         "less-loader": "^4.1.0",
         "node-sass": "^4.11.0",
@@ -38,7 +45,6 @@
         "stylelint": "^9.10.1",
         "stylelint-config-recess-order": "^2.0.1",
         "stylelint-config-standard": "^18.2.0",
-        "stylelint-order": "^2.0.0",
         "vue-template-compiler": "^2.5.21"
     },
     "eslintConfig": {
@@ -86,10 +92,7 @@
         },
         "parserOptions": {
             "parser": "babel-eslint"
-        },
-        "plugins": [
-            "vue"
-        ]
+        }
     },
     "postcss": {
         "plugins": {

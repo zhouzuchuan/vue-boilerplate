@@ -37,6 +37,7 @@ module.exports = {
                     '@p': path.resolve(__dirname, './src/pages'),
                     '@c': path.resolve(__dirname, './src/components'),
                     '@u': path.resolve(__dirname, './src/utils'),
+                    '@s': path.resolve(__dirname, './src/styles'),
                     vue$: 'vue/dist/vue.esm.js',
                 },
             },
@@ -53,7 +54,7 @@ module.exports = {
     css: {
         // 配置高于chainWebpack中关于css loader的配置
         modules: false, // 是否开启支持‘foo.module.css’样式
-        extract: true, // 是否使用css分离插件 ExtractTextPlugin，采用独立样式文件载入，不采用<style>方式内联至html文件中
+        // extract: true, // 是否使用css分离插件 ExtractTextPlugin，采用独立样式文件载入，不采用<style>方式内联至html文件中
         sourceMap: false, // 是否在构建样式地图，false将提高构建速度
         loaderOptions: {
             // css预设器配置项

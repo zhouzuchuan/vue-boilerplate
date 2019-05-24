@@ -1,6 +1,6 @@
 {
     "name": "vue-boilerplate",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "private": true,
     "scripts": {
         "start": "vue-cli-service serve",
@@ -54,7 +54,8 @@
     "eslintConfig": {
         "root": true,
         "env": {
-            "node": true
+            "node": true,
+            "browser": true
         },
         "extends": [
             "plugin:vue/essential",

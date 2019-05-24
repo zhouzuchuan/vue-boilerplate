@@ -31,7 +31,7 @@ export default {
 </script>
 
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     color: #2c3e50;
@@ -52,9 +52,10 @@ export default {
         }
     }
 }
+
 .lang-box {
     position: fixed;
-    right: 10px;
     top: 10px;
+    right: 10px;
 }
 </style>

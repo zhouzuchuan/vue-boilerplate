@@ -11,7 +11,6 @@ import 'normalize.css'
 import 'css.preset'
 import '@s/element-variables.scss'
 
-import app from '@m/app.js'
 import router from './router'
 import App from './App.vue'
 
@@ -50,20 +49,25 @@ const serviceList = apiManage.init({
     request: service,
     list: require('@/api'),
 })
+
 // 注入api
 Vue.prototype.$service = serviceList
 
 Vue.config.productionTip = false
 
+const modelsFiles = require.context('@m', true, /\.js$/)
+
 new Vue({
     i18n,
     router,
     store: new Vuex.Store({
-        // models函数化 注入serve化 api
-        modules: Object.entries({ app }).reduce(
-            (r, [k, v]) => ({ ...r, [k]: typeof v === 'function' ? v(serviceList) : v }),
-            {},
-        ),
+        modules: modelsFiles.keys().reduce((modules, modelPath) => {
+            const moduleName = modelPath.replace(/^\.\/(.*)\.\w+$/, '$1')
+            const value = modelsFiles(modelPath).default
+            // models函数化 注入serve化 api
+            modules[moduleName] = typeof value === 'function' ? value(serviceList) : value
+            return modules
+        }, {}),
         plugins: [
             // vuex数据持久化
             createPersistedState({

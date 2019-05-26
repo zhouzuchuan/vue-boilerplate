@@ -12,9 +12,9 @@ module.exports = {
                     status: '0001',
                     message: '成功',
                     result: [],
-                    ...result
+                    ...result,
                 }),
-            options.delay || 1000
+            options.delay || 1000,
         )
-    }
+    },
 }

@@ -14,7 +14,7 @@
     "dependencies": {
         "api-manage": "^0.4.0",
         "core-js": "^2.6.5",
-        "css.preset": "^0.0.1",
+        "css.preset": "^0.0.4",
         "element-ui": "^2.7.0",
         "file-saver": "^2.0.1",
         "js-cookie": "^2.2.0",

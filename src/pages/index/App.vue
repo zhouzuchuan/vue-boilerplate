@@ -1,13 +1,21 @@
 <template>
     <div id="app">
         <div id="nav">
-            <router-link to="/">{{$tc('nav', 1)}}</router-link> |
-            <router-link to="/about">{{$tc('nav', 0)}}</router-link>
+            <router-link to="/">
+                {{ $tc('nav', 1) }}
+            </router-link> |
+            <router-link to="/about">
+                {{ $tc('nav', 0) }}
+            </router-link>
         </div>
         <div class="lang-box">
             <el-radio-group v-model="lang" size="mini">
-                <el-radio-button label="en">English</el-radio-button>
-                <el-radio-button label="zh">中文</el-radio-button>
+                <el-radio-button label="en">
+                    English
+                </el-radio-button>
+                <el-radio-button label="zh">
+                    中文
+                </el-radio-button>
             </el-radio-group>
         </div>
         <router-view/>

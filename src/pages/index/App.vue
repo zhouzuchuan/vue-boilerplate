@@ -18,7 +18,10 @@
                 </el-radio-button>
             </el-radio-group>
         </div>
-        <router-view/>
+
+        <transition name="page-fade" mode="out-in">
+            <router-view />
+        </transition>
     </div>
 </template>
 

@@ -9,7 +9,9 @@
         "lint:css": "stylelint 'src/**/*.vue' --fix",
         "test:unit": "vue-cli-service test:unit",
         "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "build-storybook": "build-storybook",
+        "styleguide": "vue-cli-service styleguidist",
+        "styleguide:build": "vue-cli-service styleguidist:build"
     },
     "dependencies": {
         "api-manage": "^1.0.0",
@@ -63,6 +65,7 @@
         "stylelint": "^10.1.0",
         "stylelint-config-recess-order": "^2.0.2",
         "stylelint-config-standard": "^18.3.0",
+        "vue-cli-plugin-styleguidist": "^3.15.0",
         "vue-loader": "^15.7.0",
         "vue-template-compiler": "^2.6.10"
     },

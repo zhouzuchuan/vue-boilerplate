@@ -57,6 +57,10 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 
+/**
+ * 您好，世界！ 
+ * @displayName HelloWorld
+ */
 export default {
     name: 'HelloWorld',
     computed: mapState('app', ['packageList']),

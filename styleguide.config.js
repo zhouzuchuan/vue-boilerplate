@@ -1,8 +1,8 @@
 const path = require('path')
+const { bindServer } = require('data-mock')
 const pkg = require('./package.json')
 
 module.exports = {
-    // set your styleguidist configuration here
     title: pkg.name,
     version: pkg.version,
     components: 'src/components/**/**/[A-Z]*.{vue,jsx}',
@@ -11,6 +11,13 @@ module.exports = {
     ribbon: {
         text: 'Back to boilerplate',
         url: 'https://github.com/zhouzuchuan/vue-boilerplate',
+    },
+    configureServer(server) {
+        bindServer({
+            server,
+            target: path.resolve(__dirname, './src/mocks/'),
+            watchTarget: path.resolve(__dirname, '../src/api/'),
+        })
     },
     // 定义props和方法选项卡的初始状态
     usageMode: 'expand',

@@ -1,25 +1,21 @@
 <template>
     <div class="home">
-        <img alt="Vue logo" src="../assets/logo.png">
+        <img alt="Vue logo" src="../assets/logo.png" />
 
         <HelloWorld />
     </div>
 </template>
 
-<script> 
+<script>
 import HelloWorld from '@c/HelloWord.vue'
 
 export default {
     name: 'home',
 
     components: {
-        HelloWorld
+        HelloWorld,
     },
 
-    created() {
-
-    }
+    created() {},
 }
 </script>
-
-

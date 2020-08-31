@@ -1,22 +1,20 @@
-import Vue from 'vue'
-import axios from 'axios'
-import apiManage from 'api-manage'
+/**
+ *
+ * api server 管理
+ *
+ * PS: 这里用node来导出模块 是为了在mock中mock服务使用，并且mock中监听了该文件，有更改则刷新mock
+ *
+ * */
 
-// 请求统一处理
-const service = axios.create({
-    timeout: 1 * 60 * 1000,
-})
-service.interceptors.request.use(config => config, error => Promise.reject(error))
-service.interceptors.response.use(response => response, error => Promise.reject(error))
+const { bindApi } = require('api-manage')
 
-const serviceList = apiManage.init({
-    request: service,
-    list: require('@/api'),
-    // 请求验证
-    validate: () => true,
-})
+function createApiList(apiPaths) {
+    return bindApi(apiPaths, {
+        // 目录清单注入server
+        server: '',
+    })
+}
 
-// 注入api
-Vue.prototype.$service = serviceList
-
-export default serviceList
+module.exports = {
+    createApiList,
+}

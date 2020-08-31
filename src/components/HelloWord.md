@@ -5,7 +5,9 @@
         <p>
             {{ $t('text1') }}<br />
             {{ $t('text2') }}
-            <a href="https://cli.vuejs.org" target="_blank" rel="noopener"> vue-cli {{ $t('text3') }} </a>.
+            <a href="https://cli.vuejs.org" target="_blank" rel="noopener">
+                vue-cli {{ $t('text3') }} </a
+            >.
         </p>
         <h3>{{ $tc('title', 0) }}</h3>
         <ul>
@@ -23,7 +25,11 @@
                 </a>
             </li>
             <li>
-                <a href="https://forum.vuejs.org" target="_blank" rel="noopener">
+                <a
+                    href="https://forum.vuejs.org"
+                    target="_blank"
+                    rel="noopener"
+                >
                     Forum
                 </a>
             </li>
@@ -33,7 +39,11 @@
                 </a>
             </li>
             <li>
-                <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">
+                <a
+                    href="https://twitter.com/vuejs"
+                    target="_blank"
+                    rel="noopener"
+                >
                     Twitter
                 </a>
             </li>
@@ -55,15 +65,15 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex'
 
 export default {
     computed: mapState('app', ['packageList']),
     methods: mapActions('app', ['getList']),
     created() {
-        this.getList();
+        this.getList()
     },
-};
+}
 </script>
 
 <style scoped lang="scss">

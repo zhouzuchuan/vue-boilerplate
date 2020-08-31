@@ -17,7 +17,8 @@ const router = new Router({
         {
             path: '/about',
             name: 'about',
-            component: () => import(/* webpackChunkName: "about" */ '@cn/About.vue'),
+            component: () =>
+                import(/* webpackChunkName: "about" */ '@cn/About.vue'),
         },
     ],
 })

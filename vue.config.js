@@ -1,5 +1,5 @@
 const path = require('path')
-const { bindServer } = require('data-mock')
+const DataMock = require('data-mock')
 const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
@@ -79,11 +79,18 @@ module.exports = {
         https: false,
         hotOnly: false,
         after: server => {
-            bindServer({
-                server,
-                target: path.resolve(__dirname, './src/mocks/'),
-                watchTarget: path.resolve(__dirname, '../src/api/'),
-            })
+            try {
+                new DataMock(server, {
+                    target: path.resolve(__dirname, './src/mocks/'),
+                    watchTarget: [
+                        path.resolve(__dirname, './src/plugins/api'),
+                        path.resolve(__dirname, './src/api/'),
+                    ],
+                })
+            } catch (err) {
+                console.log('mock server start error!')
+                console.log(err)
+            }
         },
     },
 }

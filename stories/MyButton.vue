@@ -1,4 +1,3 @@
-
 <template>
     <button class="btn" :class="type" :disabled="disabled" @click="click">
         <!-- @slot Default to label prop -->
@@ -28,10 +27,6 @@ import { OutlinedButton, ContainedButton, TextButton } from 'Button';
 
 </docs>
 
-
-
-
-
 <script>
 export default {
     props: {
@@ -39,19 +34,19 @@ export default {
          * Whether to disable button
          */
         disabled: {
-            type: Boolean
+            type: Boolean,
         },
         /**
          * Button type 222
          */
         type: {
             type: String,
-            default: 'normal'
+            default: 'normal',
         },
         label: {
             type: String,
-            required: false
-        }
+            required: false,
+        },
     },
     methods: {
         click(ev) {
@@ -61,11 +56,10 @@ export default {
              */
             console.log('ssss')
             this.$emit('click', ev)
-        }
-    }
+        },
+    },
 }
 </script>
-
 
 <style scoped>
 .btn {

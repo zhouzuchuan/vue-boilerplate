@@ -1,4 +1,4 @@
-# vue-boilerplate
+# [vue-boilerplate](https://github.com/zhouzuchuan/vue-boilerplate)
 
 基于官方 [Vue-cli](https://cli.vuejs.org) 进行二次开发定制，加入诸多三方库以及功能，方便开箱即用
 

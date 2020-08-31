@@ -3,7 +3,8 @@
         <div id="nav">
             <router-link to="/">
                 {{ $tc('nav', 1) }}
-            </router-link> |
+            </router-link>
+            |
             <router-link to="/about">
                 {{ $tc('nav', 0) }}
             </router-link>
@@ -25,22 +26,20 @@
     </div>
 </template>
 
-<script> 
-
+<script>
 export default {
     data() {
         return {
-            lang: 'en'
+            lang: 'en',
         }
     },
     watch: {
         lang(nv) {
             this.$i18n.locale = nv
-        }
-    }
+        },
+    },
 }
 </script>
-
 
 <style lang="scss" scoped>
 #app {

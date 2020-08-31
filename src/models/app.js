@@ -6,16 +6,16 @@ export default ({ serveGetPackageList }) => {
         },
         actions: {
             getList: ({ commit }) => {
-                serveGetPackageList().then(({ data }) => {
+                serveGetPackageList().then(packageList => {
                     commit('setState', {
-                        packageList: data.result,
+                        packageList,
                     })
                 })
             },
         },
         mutations: {
             setState: (state, payload) => {
-                state.packageList = payload.packageList
+                state.packageList = payload?.packageList
             },
         },
     }

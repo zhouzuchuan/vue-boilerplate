@@ -10,11 +10,13 @@ module.exports = {
         },
         {
             name: 'babel',
-            src: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel',
+            src:
+                'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel',
         },
         {
             name: 'eslint',
-            src: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint',
+            src:
+                'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint',
         },
         {
             name: 'stylelint',

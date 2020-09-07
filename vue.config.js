@@ -88,6 +88,7 @@ module.exports = {
                     ],
                 })
             } catch (err) {
+                /* eslint-disable */
                 console.log('mock server start error!')
                 console.log(err)
             }

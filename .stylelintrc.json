@@ -2,7 +2,16 @@
     "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
     "plugins": ["stylelint-order"],
     "rules": {
-        "at-rule-no-unknown": [true, { "ignoreAtRules": ["mixin", "extend", "content"] }],
-        "indentation": 4
+        "at-rule-no-unknown": [
+            true,
+            { "ignoreAtRules": ["mixin", "extend", "content"] }
+        ],
+        "indentation": 4,
+        "selector-pseudo-element-no-unknown": [
+            true,
+            {
+                "ignorePseudoElements": ["v-deep"]
+            }
+        ]
     }
 }

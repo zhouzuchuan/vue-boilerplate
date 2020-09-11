@@ -11,8 +11,7 @@
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "styleguide": "vue-cli-service styleguidist",
-        "styleguide:build": "vue-cli-service styleguidist:build",
-        "precommit": "lint-staged"
+        "styleguide:build": "vue-cli-service styleguidist:build"
     },
     "dependencies": {
         "api-manage": "^2.1.1",

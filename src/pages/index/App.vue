@@ -10,7 +10,7 @@
             </router-link>
         </div>
         <div class="lang-box">
-            <el-radio-group v-model="lang" size="mini">
+            <el-radio-group v-model="$i18n.locale" size="mini">
                 <el-radio-button label="en">
                     English
                 </el-radio-button>
@@ -29,14 +29,7 @@
 <script>
 export default {
     data() {
-        return {
-            lang: 'en',
-        }
-    },
-    watch: {
-        lang(nv) {
-            this.$i18n.locale = nv
-        },
+        return {}
     },
 }
 </script>

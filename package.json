@@ -84,6 +84,9 @@
         "> 1%",
         "last 2 versions"
     ],
+    "husky": {
+        "pre-commit": "lint-staged"
+    },
     "lint-staged": {
         "src/**/*.{js,vue}": [
             "prettier --write",

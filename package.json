@@ -5,8 +5,9 @@
     "scripts": {
         "start": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "lint": "vue-cli-service lint",
+        "lint:js": "vue-cli-service lint",
         "lint:css": "stylelint 'src/**/*.vue' --fix",
+        "lint": "npm run lint:js && npm run  lint:css",
         "test:unit": "vue-cli-service test:unit",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
@@ -91,7 +92,7 @@
     "lint-staged": {
         "src/**/*.{js,vue}": [
             "prettier --write",
-            "eslint",
+            "npm run lint",
             "git add ."
         ],
         "*": [

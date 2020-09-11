@@ -84,7 +84,9 @@
         "last 2 versions"
     ],
     "husky": {
-        "pre-commit": "lint-staged"
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
     },
     "lint-staged": {
         "src/**/*.{js,vue}": [

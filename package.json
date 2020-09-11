@@ -92,7 +92,7 @@
         "src/**/*.{js,vue}": [
             "prettier --write",
             "eslint",
-            "git add"
+            "git add ."
         ]
     }
 }

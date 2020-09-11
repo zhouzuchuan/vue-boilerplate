@@ -94,9 +94,7 @@
             "eslint",
             "git add ."
         ],
-        "src/**/*.{json}": [
-            "prettier --write",
-            "eslint",
+        "*": [
             "git add ."
         ]
     }

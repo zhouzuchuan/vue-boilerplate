@@ -11,12 +11,8 @@
         </div>
         <div class="lang-box">
             <el-radio-group v-model="$i18n.locale" size="mini">
-                <el-radio-button label="en">
-                    English
-                </el-radio-button>
-                <el-radio-button label="zh">
-                    中文
-                </el-radio-button>
+                <el-radio-button label="en"> English </el-radio-button>
+                <el-radio-button label="zh"> 中文 </el-radio-button>
             </el-radio-group>
         </div>
 

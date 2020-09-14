@@ -53,22 +53,7 @@
         ],
         "vue/use-v-on-exact": 2,
         "vue/html-end-tags": 2,
-        "vue/singleline-html-element-content-newline": [
-            "error",
-            {
-                "ignoreWhenNoAttributes": true,
-                "ignoreWhenEmpty": true,
-                "ignores": ["pre", "textarea"]
-            }
-        ],
-        "vue/multiline-html-element-content-newline": [
-            "error",
-            {
-                "ignoreWhenEmpty": true,
-                "ignores": ["pre", "textarea"],
-                "allowEmptyLines": false
-            }
-        ],
+
         "vue/attributes-order": [
             "error",
             {

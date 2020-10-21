@@ -1,9 +1,11 @@
 import Vue from 'vue'
 
+import '@/plugins/icons'
 import i18n from '@/plugins/i18n'
 import '@/plugins/element-ui'
 import store from '@/plugins/store'
 import router from '@/plugins/router'
+import '@/plugins/components'
 
 import 'normalize.css'
 import 'css.preset'
@@ -15,8 +17,8 @@ import App from './App.vue'
 Vue.config.productionTip = false
 
 new Vue({
-    i18n,
-    router,
-    store,
-    render: (h) => h(App),
+  i18n,
+  router,
+  store,
+  render: h => h(App),
 }).$mount('#app')

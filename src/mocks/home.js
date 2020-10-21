@@ -1,19 +1,19 @@
 // const { Random } = require('mockjs')
 
 const {
-    DM: {
-        api: { apiGetPackageList },
-        relypackageList,
-        packageList,
+  DM: {
+    api: { apiGetPackageList },
+    relypackageList,
+    packageList,
 
-        returnAcition,
-    },
+    returnAcition,
+  },
 } = global
 
 module.exports = {
-    [apiGetPackageList]: (req, res) => {
-        returnAcition(res, {
-            result: [packageList, relypackageList],
-        })
-    },
+  [apiGetPackageList]: (req, res) => {
+    returnAcition(res, {
+      result: [packageList, relypackageList],
+    })
+  },
 }

@@ -1,13 +1,13 @@
 .page-fade-enter-active {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .page-fade-leave-active {
-    transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .page-fade-enter,
 .page-fade-leave-to {
-    opacity: 0;
-    transform: translateX(10px);
+  opacity: 0;
+  transform: translateX(10px);
 }

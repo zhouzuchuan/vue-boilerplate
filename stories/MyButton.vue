@@ -1,10 +1,15 @@
 <template>
-    <button class="btn" :class="type" :disabled="disabled" @click="click">
-        <!-- @slot Default to label prop -->
-        <slot>
-            {{ label }}
-        </slot>
-    </button>
+  <button
+    class="btn"
+    :class="type"
+    :disabled="disabled"
+    @click="click"
+  >
+    <!-- @slot Default to label prop -->
+    <slot>
+      {{ label }}
+    </slot>
+  </button>
 </template>
 
 <docs>
@@ -29,58 +34,58 @@ import { OutlinedButton, ContainedButton, TextButton } from 'Button';
 
 <script>
 export default {
-    props: {
-        /**
-         * Whether to disable button
-         */
-        disabled: {
-            type: Boolean,
-        },
-        /**
-         * Button type 222
-         */
-        type: {
-            type: String,
-            default: 'normal',
-        },
-        label: {
-            type: String,
-            required: false,
-        },
+  props: {
+    /**
+     * Whether to disable button
+     */
+    disabled: {
+      type: Boolean,
     },
-    methods: {
-        click(ev) {
-            /**
-             * Passthrough click event
-             * @type {Event}
-             */
-            console.log('ssss')
-            this.$emit('click', ev)
-        },
+    /**
+     * Button type 222
+     */
+    type: {
+      type: String,
+      default: 'normal',
     },
+    label: {
+      type: String,
+      required: false,
+    },
+  },
+  methods: {
+    click(ev) {
+      /**
+       * Passthrough click event
+       * @type {Event}
+       */
+      console.log('ssss')
+      this.$emit('click', ev)
+    },
+  },
 }
 </script>
 
 <style scoped>
 .btn {
-    padding: 3px 10px;
-    color: #333;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+  padding: 3px 10px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 .btn:active {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 .btn.primary {
-    color: #fff;
-    background-color: #33f;
+  color: #fff;
+  background-color: #33f;
 }
 
 .btn:disabled {
-    color: #777;
-    background-color: #eee;
+  color: #777;
+  background-color: #eee;
 }
 </style>

@@ -37,9 +37,9 @@ Means `OutlinedButton`, `ContainedButton`, `TextButton`. It is possible to impor
 
 Which one does @torvalds like most?
 
--   [ ] tiger \#
--   [ ] whale \*
--   [x] octocat \!
+- [ ] tiger \#
+- [ ] whale \*
+- [x] octocat \!
 
 > Stay hungry; stay foolish.
 >

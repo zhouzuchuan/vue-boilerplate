@@ -1,103 +1,101 @@
 {
-    "name": "vue-boilerplate",
-    "version": "1.0.0",
-    "private": true,
-    "scripts": {
-        "start": "vue-cli-service serve",
-        "build": "vue-cli-service build",
-        "lint:js": "vue-cli-service lint",
-        "lint:css": "stylelint 'src/**/*.vue' --fix",
-        "lint": "npm run lint:js && npm run  lint:css",
-        "lint2": "eslint --fix",
-        "test:unit": "vue-cli-service test:unit",
-        "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook",
-        "analyze": "source-map-explorer 'dist/assets/js/*.js'",
-        "styleguide": "vue-cli-service styleguidist",
-        "styleguide:build": "vue-cli-service styleguidist:build"
-    },
-    "dependencies": {
-        "api-manage": "^2.1.1",
-        "axios": "^0.20.0",
-        "core-js": "^2.6.5",
-        "css.preset": "^0.0.4",
-        "element-ui": "^2.9.1",
-        "file-saver": "^2.0.2",
-        "js-cookie": "^2.2.0",
-        "jszip": "^3.2.1",
-        "lodash": "^4.17.11",
-        "moment": "^2.24.0",
-        "normalize.css": "^8.0.1",
-        "nprogress": "^0.2.0",
-        "vue": "^2.6.12",
-        "vue-echarts": "^4.0.3",
-        "vue-i18n": "^8.11.2",
-        "vue-router": "^3.0.6",
-        "vue-rx": "^6.2.0",
-        "vuex": "^3.5.1",
-        "vuex-persistedstate": "^2.5.4"
-    },
-    "devDependencies": {
-        "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
-        "@babel/plugin-proposal-optional-chaining": "^7.11.0",
-        "@storybook/addon-a11y": "^5.1.8",
-        "@storybook/addon-actions": "^5.1.8",
-        "@storybook/addon-console": "^1.1.0",
-        "@storybook/addon-info": "^5.1.8",
-        "@storybook/addon-knobs": "^5.1.8",
-        "@storybook/addon-links": "^5.1.8",
-        "@storybook/addon-storysource": "^5.1.8",
-        "@storybook/addon-viewport": "^5.1.8",
-        "@storybook/addons": "^5.1.8",
-        "@storybook/theming": "^5.1.8",
-        "@storybook/vue": "^5.1.8",
-        "@vue/cli-plugin-babel": "^3.8.0",
-        "@vue/cli-plugin-eslint": "^3.8.0",
-        "@vue/cli-plugin-unit-jest": "^3.8.0",
-        "@vue/cli-service": "^3.8.0",
-        "@vue/test-utils": "^1.0.0-beta.29",
-        "babel-eslint": "^10.0.1",
-        "babel-loader": "^8.0.6",
-        "babel-plugin-component": "^1.1.1",
-        "data-mock": "^2.1.0",
-        "eslint": "^5.16.0",
-        "eslint-plugin-vue": "^5.0.0",
-        "husky": "^4.3.0",
-        "less": "^3.9.0",
-        "less-loader": "^5.0.0",
-        "lint-staged": "^10.3.0",
-        "prettier": "^2.1.1",
-        "sass": "^1.21.0",
-        "sass-loader": "^7.1.0",
-        "source-map-explorer": "^2.5.0",
-        "storybook-addon-vue-info": "^1.2.1",
-        "storybook-readme": "^5.0.3",
-        "stylelint": "^10.1.0",
-        "stylelint-config-recess-order": "^2.0.2",
-        "stylelint-config-standard": "^18.3.0",
-        "vue-cli-plugin-styleguidist": "^3.15.0",
-        "vue-loader": "^15.7.0",
-        "vue-template-compiler": "^2.6.10"
-    },
-    "postcss": {
-        "plugins": {
-            "autoprefixer": {}
-        }
-    },
-    "browserslist": [
-        "> 1%",
-        "last 2 versions"
-    ],
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "src/**/*.{js,vue}": [
-            "prettier --write",
-            "npm run lint",
-            "git add ."
-        ]
+  "name": "vue-boilerplate",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "start": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint:js": "vue-cli-service lint",
+    "lint:css": "stylelint 'src/**/*.vue' --fix",
+    "lint": "npm run lint:js && npm run  lint:css",
+    "lint2": "eslint --fix",
+    "test:unit": "vue-cli-service test:unit",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "analyze": "source-map-explorer 'dist/assets/js/*.js'",
+    "styleguide": "vue-cli-service styleguidist",
+    "styleguide:build": "vue-cli-service styleguidist:build"
+  },
+  "dependencies": {
+    "api-manage": "^2.1.1",
+    "axios": "^0.20.0",
+    "core-js": "^2.6.5",
+    "css.preset": "^0.0.4",
+    "element-ui": "^2.9.1",
+    "js-cookie": "^2.2.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
+    "vue": "^2.6.12",
+    "vue-echarts": "^4.0.3",
+    "vue-i18n": "^8.11.2",
+    "vue-router": "^3.0.6",
+    "vuex": "^3.5.1",
+    "vuex-persistedstate": "^2.5.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
+    "@storybook/addon-a11y": "^5.1.8",
+    "@storybook/addon-actions": "^5.1.8",
+    "@storybook/addon-console": "^1.1.0",
+    "@storybook/addon-info": "^5.1.8",
+    "@storybook/addon-knobs": "^5.1.8",
+    "@storybook/addon-links": "^5.1.8",
+    "@storybook/addon-storysource": "^5.1.8",
+    "@storybook/addon-viewport": "^5.1.8",
+    "@storybook/addons": "^5.1.8",
+    "@storybook/theming": "^5.1.8",
+    "@storybook/vue": "^5.1.8",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-plugin-unit-jest": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-component": "^1.1.1",
+    "data-mock": "^2.1.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "husky": "^4.3.0",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "lint-staged": "^10.3.0",
+    "prettier": "^2.1.1",
+    "sass": "^1.21.0",
+    "sass-loader": "^7.1.0",
+    "source-map-explorer": "^2.5.0",
+    "storybook-addon-vue-info": "^1.2.1",
+    "storybook-readme": "^5.0.3",
+    "stylelint": "^10.1.0",
+    "stylelint-config-recess-order": "^2.0.2",
+    "stylelint-config-standard": "^18.3.0",
+    "svg-sprite-loader": "^5.0.0",
+    "vue-cli-plugin-styleguidist": "^3.15.0",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
     }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "prettier --write",
+      "npm run lint",
+      "git add ."
+    ]
+  }
 }

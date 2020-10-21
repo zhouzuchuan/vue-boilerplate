@@ -9,12 +9,12 @@
 const { bindApi } = require('api-manage')
 
 function createApiList(apiPaths) {
-    return bindApi(apiPaths, {
-        // 目录清单注入server
-        server: '',
-    })
+  return bindApi(apiPaths, {
+    // 目录清单注入server
+    server: '',
+  })
 }
 
 module.exports = {
-    createApiList,
+  createApiList,
 }

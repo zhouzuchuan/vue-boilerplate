@@ -6,6 +6,7 @@ import '@/plugins/element-ui'
 import store from '@/plugins/store'
 import router from '@/plugins/router'
 import '@/plugins/components'
+import '@/plugins/tools'
 
 import 'normalize.css'
 import 'css.preset'

@@ -1,6 +1,6 @@
 {
   "name": "vue-boilerplate",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve",
@@ -10,6 +10,7 @@
     "lint": "npm run lint:js && npm run  lint:css",
     "lint2": "eslint --fix",
     "commit": "git-cz",
+    "release": "standard-version",
     "test:unit": "vue-cli-service test:unit",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
@@ -82,6 +83,7 @@
     "sass": "^1.21.0",
     "sass-loader": "^7.1.0",
     "source-map-explorer": "^2.5.0",
+    "standard-version": "^9.0.0",
     "storybook-addon-vue-info": "^1.2.1",
     "storybook-readme": "^5.0.3",
     "stylelint": "^10.1.0",
@@ -104,7 +106,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -e $GIT_PARAMS"
     }
   },
   "lint-staged": {

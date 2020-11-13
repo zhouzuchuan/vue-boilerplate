@@ -9,12 +9,18 @@
     "lint:css": "stylelint 'src/**/*.vue' --fix",
     "lint": "npm run lint:js && npm run  lint:css",
     "lint2": "eslint --fix",
+    "commit": "git-cz",
     "test:unit": "vue-cli-service test:unit",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "analyze": "source-map-explorer 'dist/assets/js/*.js'",
     "styleguide": "vue-cli-service styleguidist",
     "styleguide:build": "vue-cli-service styleguidist:build"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "api-manage": "^2.1.1",
@@ -55,6 +61,8 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-component": "^1.1.1",
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "^3.3.0",
     "data-mock": "^2.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",

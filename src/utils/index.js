@@ -3,7 +3,7 @@
  *
  * @param {*} context
  */
-export const requireAll = context => context.keys().map(context)
+export const requireAll = (context) => context.keys().map(context)
 
 /**
  * 可选链

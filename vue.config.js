@@ -17,11 +17,11 @@ module.exports = {
       filename: 'index.html',
     },
   },
-  lintOnSave: true, // 是否开启eslint保存检测，有效值：ture | false | 'error'
+  lintOnSave: false, // 是否开启eslint保存检测，有效值：ture | false | 'error'
   runtimeCompiler: true, // 运行时版本是否需要编译
   transpileDependencies: [], // 默认babel-loader忽略mode_modules，这里可增加例外的依赖包名
   productionSourceMap: true, // 是否在构建生产包时生成 sourceMap 文件，false将提高构建速度
-  configureWebpack: config => {
+  configureWebpack: (config) => {
     // webpack配置，值位对象时会合并配置，为方法时会改写配置
     if (debug) {
       // 开发环境配置
@@ -47,7 +47,7 @@ module.exports = {
       },
     })
   },
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     // webpack链接API，用于生成和修改webapck配置，https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
     if (debug) {
       // 本地开发配置
@@ -88,7 +88,7 @@ module.exports = {
     port: 8080,
     https: false,
     hotOnly: false,
-    after: server => {
+    after: (server) => {
       try {
         new DataMock(server, {
           target: path.resolve(__dirname, './src/mocks/'),

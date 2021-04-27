@@ -8,7 +8,7 @@ export default ({ serveGetPackageList }) => {
 
     actions: {
       getList: ({ commit }) => {
-        serveGetPackageList().then(packageList => {
+        serveGetPackageList().then((packageList) => {
           commit('setState', {
             packageList,
           })

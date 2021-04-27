@@ -11,12 +11,12 @@ const service = axios.create({
   timeout: 1 * 60 * 1000,
 })
 service.interceptors.request.use(
-  config => config,
-  error => Promise.reject(error)
+  (config) => config,
+  (error) => Promise.reject(error)
 )
 service.interceptors.response.use(
-  response => response,
-  error => Promise.reject(error)
+  (response) => response,
+  (error) => Promise.reject(error)
 )
 
 const apiFiles = require.context('@/api/', true, /\.js$/)
@@ -26,12 +26,12 @@ const serviceList = new ApiManage({
 
   CancelRequest: axios.CancelToken,
 
-  list: createApiList(apiFiles.keys().map(v => apiFiles(v))),
+  list: createApiList(apiFiles.keys().map((v) => apiFiles(v))),
   // 请求验证
   validate: () => true,
 
   // 提取 response
-  limitResponse: res => res.data.result,
+  limitResponse: (res) => res.data.result,
 }).getService()
 
 // 注入api

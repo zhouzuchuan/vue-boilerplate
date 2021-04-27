@@ -4,7 +4,6 @@
       <router-link to="/home">
         {{ $tc('nav', 1) }}
       </router-link>
-      |
       <router-link to="/about">
         {{ $tc('nav', 0) }}
       </router-link>

@@ -1,10 +1,14 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recess-order",
+    "stylelint-config-prettier"
+  ],
   "plugins": ["stylelint-order"],
   "rules": {
     "at-rule-no-unknown": [
       true,
-      { "ignoreAtRules": ["mixin", "extend", "content"] }
+      { "ignoreAtRules": ["mixin", "extend", "content", "include"] }
     ],
     "indentation": 2,
     "selector-pseudo-element-no-unknown": [

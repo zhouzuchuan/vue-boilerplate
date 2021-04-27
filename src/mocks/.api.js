@@ -3,9 +3,9 @@
 const globby = require('globby')
 const path = require('path')
 
-const { createApiList, a } = require('../plugins/api')
+const { createApiList } = require('../plugins/api')
 
-const extractApi = data => {
+const extractApi = (data) => {
   return Object.entries(data).reduce((r, [method, apis]) => {
     return Object.entries(apis).reduce((r2, [apiName, apiPath]) => {
       return {
@@ -22,7 +22,7 @@ module.exports = {
     createApiList(
       globby
         .sync([path.resolve(__dirname, '../api') + '/*.js'])
-        .map(v => require(v))
+        .map((v) => require(v))
     )
   ),
   // 接口返回统一格式

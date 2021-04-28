@@ -11,6 +11,7 @@
  */
 export default {
   name: 'IconSvg',
+
   props: {
     name: {
       type: String,

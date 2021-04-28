@@ -63,10 +63,10 @@ import { mapActions, mapState } from 'vuex'
 
 export default {
   computed: mapState('app', ['packageList']),
-  methods: mapActions('app', ['getList']),
   created() {
     this.getList()
   },
+  methods: mapActions('app', ['getList']),
 }
 </script>
 

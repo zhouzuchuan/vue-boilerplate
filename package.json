@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint:js": "vue-cli-service lint",
     "lint:css": "stylelint 'src/**/*.vue' --allow-empty-input --fix",
-    "lint": "npm run lint:js && npm run  lint:css",
+    "lint": "npm run lint:js && npm run lint:css",
     "lint2": "eslint --fix",
     "commit": "git-cz",
     "release": "standard-version",
@@ -16,7 +16,9 @@
     "build-storybook": "build-storybook",
     "analyze": "source-map-explorer 'dist/assets/js/*.js'",
     "styleguide": "vue-cli-service styleguidist",
-    "styleguide:build": "vue-cli-service styleguidist:build"
+    "styleguide:build": "vue-cli-service styleguidist:build",
+    "prepare": "husky install",
+    "postinstall": "npx husky install"
   },
   "config": {
     "commitizen": {
@@ -77,10 +79,11 @@
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.7.0",
-    "husky": "^4.3.0",
+    "glob": "^7.1.6",
+    "husky": "^6.0.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
-    "lint-staged": "^10.3.0",
+    "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "sass": "^1.21.0",
     "sass-loader": "^7.1.0",
@@ -106,17 +109,10 @@
     "> 1%",
     "last 2 versions"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -e $GIT_PARAMS"
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,vue}": [
       "prettier --write",
-      "npm run lint",
-      "git add ."
+      "npm run lint"
     ]
   }
 }

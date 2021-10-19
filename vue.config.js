@@ -93,7 +93,7 @@ module.exports = {
         new DataMock(server, {
           target: path.resolve(__dirname, './src/mocks/'),
           watchTarget: [
-            path.resolve(__dirname, './src/plugins/api'),
+            path.resolve(__dirname, './src/api.config'),
             path.resolve(__dirname, './src/api/'),
           ],
         })

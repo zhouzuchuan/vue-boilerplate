@@ -76,7 +76,7 @@ export default {
 }
 
 a {
-  color: #42b983;
+  color: var(--v-primary-base);
 }
 
 h3 {

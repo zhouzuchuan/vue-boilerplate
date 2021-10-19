@@ -1,18 +1,26 @@
 <template>
   <div>
     <div id="nav">
-      <router-link to="/home">
-        {{ $tc('nav', 1) }}
-      </router-link>
-      <router-link to="/about">
-        {{ $tc('nav', 0) }}
+      <router-link
+        v-for="item of paths"
+        :key="item.value"
+        class="mx-2"
+        :to="item.value"
+      >
+        {{ $tc('nav', item.label) }}
       </router-link>
     </div>
     <div class="lang-box">
-      <el-radio-group v-model="$i18n.locale" size="mini">
-        <el-radio-button label="en"> English </el-radio-button>
-        <el-radio-button label="zh"> 中文 </el-radio-button>
-      </el-radio-group>
+      <v-btn
+        v-for="item of langs"
+        :key="item.value"
+        class="mx-2"
+        small
+        :color="item.value === $i18n.locale ? 'primary' : ''"
+        @click="$i18n.locale = item.value"
+      >
+        {{ item.label }}
+      </v-btn>
     </div>
 
     <div class="ovh">
@@ -23,6 +31,35 @@
   </div>
 </template>
 
+<script>
+export default {
+  setup() {
+    return {
+      paths: [
+        {
+          label: 1,
+          value: '/home',
+        },
+        {
+          label: 0,
+          value: '/about',
+        },
+      ],
+      langs: [
+        {
+          label: 'English',
+          value: 'en',
+        },
+        {
+          label: '中文',
+          value: 'zh',
+        },
+      ],
+    }
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 #nav {
   padding: 30px;
@@ -32,7 +69,7 @@
     color: #2c3e50;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: var(--v-primary-base);
     }
   }
 }

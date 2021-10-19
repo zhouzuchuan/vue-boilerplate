@@ -1,0 +1,57 @@
+html {
+  overflow-y: auto !important;
+}
+
+.v-application ol,
+.v-application ul {
+  padding: 0;
+}
+
+.v-application {
+  p {
+    margin-bottom: 0;
+  }
+
+  .hover_text.primary {
+    background-color: transparent !important;
+    border-color: transparent !important;
+  }
+
+  .title {
+    font-size: inherit !important;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit !important;
+  }
+}
+
+.v-input--dense {
+  font-size: 12px;
+
+  .v-icon {
+    font-size: 18px;
+  }
+
+  &:not(.v-text-field--solo).v-text-field--outlined {
+    .v-input__prepend-inner,
+    .v-input__append-inner {
+      margin-top: 8px !important;
+    }
+  }
+}
+
+.v-pagination__item,
+.v-pagination__navigation {
+  font-size: 12px;
+  background: #f4f4f5 !important;
+  border: 0;
+  box-shadow: none;
+}
+
+.v-input fieldset {
+  border-color: #d9dadb;
+}
+
+.v-input__slot {
+  min-height: 36px !important;
+}

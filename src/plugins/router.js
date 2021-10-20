@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import nprogress from 'nprogress'
-import Layout from '@cn/Layout.vue'
+import Layout from '@cn/layouts'
 
 Vue.use(Router)
 

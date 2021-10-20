@@ -9,17 +9,13 @@
 const { bindApi } = require('api-manage')
 
 function createApiList(apiPaths) {
+  console.log(apiPaths)
   return bindApi(apiPaths, {
     // 目录清单注入server
     server: '',
   })
 }
 
-// const fileContents = createApiList(apiFiles.keys().map((v) => apiFiles(v)))
-
-// console.log(fileContents)
-
 module.exports = {
   createApiList,
-  // fileContents,
 }

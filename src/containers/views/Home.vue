@@ -59,14 +59,22 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import useStore from '@/hooks/useStore'
+import { computed } from '@vue/composition-api'
 
 export default {
-  computed: mapState('app', ['packageList']),
-  created() {
-    this.getList()
+  setup() {
+    const { dispatch, state } = useStore()
+    const packageList = computed(() => state.app.packageList)
+
+    dispatch({
+      type: 'app/getList',
+    })
+
+    return {
+      packageList,
+    }
   },
-  methods: mapActions('app', ['getList']),
 }
 </script>
 

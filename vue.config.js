@@ -44,6 +44,7 @@ module.exports = {
           '@s': path.resolve(__dirname, './src/styles'),
           vue$: 'vue/dist/vue.esm.js',
         },
+        extensions: ['.js', '.vue', '.json'],
       },
     })
   },

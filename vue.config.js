@@ -33,15 +33,15 @@ module.exports = {
       // 开发生产共同配置
       resolve: {
         alias: {
-          '@': path.resolve(__dirname, './src'),
-          '@api': path.resolve(__dirname, './src/api'),
-          '@mk': path.resolve(__dirname, './src/mocks'),
-          '@cn': path.resolve(__dirname, './src/containers'),
-          '@m': path.resolve(__dirname, './src/models'),
-          '@p': path.resolve(__dirname, './src/pages'),
-          '@c': path.resolve(__dirname, './src/components'),
-          '@u': path.resolve(__dirname, './src/utils'),
-          '@s': path.resolve(__dirname, './src/styles'),
+          '@': resolve('src'),
+          '@api': resolve('src/api'),
+          '@mk': resolve('src/mocks'),
+          '@cn': resolve('src/containers'),
+          '@m': resolve('src/models'),
+          '@p': resolve('src/pages'),
+          '@c': resolve('src/components'),
+          '@u': resolve('src/utils'),
+          '@s': resolve('src/styles'),
           vue$: 'vue/dist/vue.esm.js',
         },
         extensions: ['.js', '.vue', '.json'],
@@ -92,11 +92,8 @@ module.exports = {
     after: (server) => {
       try {
         new DataMock(server, {
-          target: path.resolve(__dirname, './src/mocks/'),
-          watchTarget: [
-            path.resolve(__dirname, './src/api.config'),
-            path.resolve(__dirname, './src/api/'),
-          ],
+          target: resolve('src/mocks/'),
+          watchTarget: [resolve('src/api.config'), resolve('src/api/')],
         })
       } catch (err) {
         /* eslint-disable */

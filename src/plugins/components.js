@@ -4,12 +4,16 @@
  * **/
 import Vue from 'vue'
 import { requireAll } from '@u'
+import _ from 'lodash'
 
 const componentContext = require.context('@/components/', true, /\/index\.vue$/)
 
+const extractTagNameForFilePath = (path) =>
+  _.kebabCase(path?.match?.(/\/components\/(.*)\/index.vue/)?.[1])
+
 requireAll(componentContext).map(({ default: item }) => {
-  let componentName = item.name ?? ''
-  if (componentName) {
-    Vue.component(componentName, item)
+  let componentTagName = item.name ?? extractTagNameForFilePath(item.__file)
+  if (componentTagName) {
+    Vue.component(componentTagName, item)
   }
 })

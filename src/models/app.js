@@ -1,4 +1,4 @@
-export default ({ serveGetPackageList }) => {
+export default ({ serveHome_QueryPackageList }) => {
   return {
     namespaced: true,
 
@@ -8,7 +8,7 @@ export default ({ serveGetPackageList }) => {
 
     actions: {
       getList: ({ commit }) => {
-        serveGetPackageList().then((packageList) => {
+        serveHome_QueryPackageList().then((packageList) => {
           commit('setState', {
             packageList,
           })
@@ -18,7 +18,9 @@ export default ({ serveGetPackageList }) => {
 
     mutations: {
       setState: (state, payload) => {
-        state.packageList = payload?.packageList
+        Object.entries(payload).forEach(([key, value]) => {
+          Reflect.set(state, key, value)
+        })
       },
     },
   }

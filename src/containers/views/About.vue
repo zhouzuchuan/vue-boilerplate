@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1 v-t="{ path: 'aboutText' }" />
+    这是关于页面
   </div>
 </template>

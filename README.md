@@ -1,60 +1,16 @@
-# [vue-boilerplate](https://github.com/zhouzuchuan/vue-boilerplate)
+# Vue 3 + TypeScript + Vite
 
-基于官方 [Vue-cli](https://cli.vuejs.org) 进行二次开发定制，加入诸多三方库以及功能 （[Vue](https://github.com/vuejs/vue)、[api-manage](https://github.com/zhouzuchuan/api-manage)、[data-mock](https://github.com/zhouzuchuan/data-mock)、[css.preset](https://github.com/zhouzuchuan/css.preset) ），方便开箱即用
+This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-<div align="center">
-  <a href="https://github.com/vuejs/vue"><img height="40px" title="vue" src="https://cn.vuejs.org/images/logo.png" /></a>
-  <a href="https://prettier.io/"><img height="40px" title="prettier" src="https://prettier.io/icon.png" /></a>
-  <a href="https://webpack.github.io/"><img  height="40px" title="webpack" src="https://webpack.js.org/assets/icon-square-big.svg" /></a>
-  <a href="https://babeljs.io/"><img  height="40px" title="babel" src="https://d33wubrfki0l68.cloudfront.net/7a197cfe44548cc1a3f581152af70a3051e11671/78df8/img/babel.svg" /></a>
-  <a href="https://editorconfig.org/"><img  height="40px" title="editorconfig" src="https://editorconfig.org/logo.png" /></a>
-  <a href="https://eslint.org/"><img  height="40px" title="eslint" src="https://d33wubrfki0l68.cloudfront.net/204482ca413433c80cd14fe369e2181dd97a2a40/092e2/assets/img/logo.svg" /></a>
-  <a  href="https://stylelint.io/"><img  height="40px" title="stylelint" src="https://camo.githubusercontent.com/aa04feafbd080140cd834905cf171ccf7b06fc5f1f1ae07ce9879218165312d1/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f7374796c656c696e742e737667" /></a>
-  <a href="https://github.com/styleguidist/snapguidist/blob/master/logo.png"><img  height="40px" title="styleguidist" src="https://react-styleguidist.js.org/img/logo.svg" /></a>
+## Recommended IDE Setup
 
-</div>
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 
-## 开始
+## Type Support For `.vue` Imports in TS
 
-```bash
+Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
 
-git clone --depth 1 --single-branch https://github.com/zhouzuchuan/vue-boilerplate.git your-project-name
+1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
+2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
 
-cd your-project-name
-
-npm install
-```
-
-### 开发环境 编译和 hot-reloads
-
-```bash
-npm run start
-```
-
-### 生产环境 编译并最小化
-
-```bash
-npm run build
-```
-
-### 启动测试
-
-```bash
-npm run test
-```
-
-### 启动检查
-
-```bash
-npm run lint
-```
-
-### commit [Angular 团队的规范](https://www.conventionalcommits.org/en/v1.0.0/)
-
-```bash
-npm run commit
-```
-
-### 自定义 配置
-
-查看 [官方说明](https://cli.vuejs.org/config/).
+You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).

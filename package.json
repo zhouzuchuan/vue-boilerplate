@@ -1,32 +1,77 @@
 {
     "name": "vue-boilerplate",
     "private": true,
-    "version": "0.0.0",
+    "version": "1.0.0",
+    "description": "vite + ts + vue3 + pinia",
     "scripts": {
         "dev": "vite",
         "build": "vue-tsc --noEmit && vite build",
+        "build:staging": "tsc && vite build --mode staging && node move_html.js",
         "preview": "vite preview",
         "start": "npm run mock & npm run dev",
-        "mock": "dm server -t ./src/mocks/ -w ./src/apis/ -p 1024"
+        "mock": "dm server -t ./src/mocks/ -w ./src/apis/ -p 2222",
+        "lint:js": "eslint 'src/**/*.{vue,ts}' --fix",
+        "lint:css": "stylelint 'src/**/*.{vue,css,scss}' --allow-empty-input --fix",
+        "lint": "npm run lint:css && npm run lint:js",
+        "prepare": "husky install",
+        "postinstall": "npx husky install"
     },
     "dependencies": {
         "api-manage": "^2.3.0",
         "axios": "^0.27.2",
-        "css.preset": "^0.2.0",
+        "css.preset": "^0.2.2",
         "normalize.css": "^8.0.1",
         "pinia": "^2.0.14",
         "vue": "^3.2.25",
         "vue-router": "4"
     },
     "devDependencies": {
+        "@commitlint/cli": "^17.0.3",
+        "@commitlint/config-conventional": "^17.0.3",
         "@types/node": "^18.0.0",
+        "@typescript-eslint/eslint-plugin": "^5.30.5",
+        "@typescript-eslint/parser": "^5.30.5",
         "@vitejs/plugin-vue": "^2.3.3",
+        "@vue/eslint-config-prettier": "^7.0.0",
+        "commitizen": "^4.2.4",
+        "customize-cra": "^1.0.0",
+        "cz-customizable": "^6.9.0",
         "data-mock": "^2.2.0",
+        "eslint": "^8.19.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-html": "^6.2.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-vue": "^9.2.0",
         "globby": "11",
+        "husky": "^8.0.1",
         "lint-staged": "^13.0.2",
+        "postcss-html": "^1.5.0",
+        "postcss-scss": "^4.0.4",
+        "prettier": "^2.7.1",
         "sass": "^1.52.3",
+        "stylelint": "^14.9.1",
+        "stylelint-config-recess-order": "^3.0.0",
+        "stylelint-config-recommended-vue": "^1.4.0",
+        "stylelint-config-standard-scss": "^4.0.0",
         "typescript": "^4.5.4",
         "vite": "^2.9.9",
         "vue-tsc": "^0.34.7"
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-customizable"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "lint-staged": {
+        "src/**/*.{vue,ts}": [
+            "prettier --write",
+            "npm run lint",
+            "git add ."
+        ]
     }
 }

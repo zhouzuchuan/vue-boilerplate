@@ -8,7 +8,7 @@ charset = utf-8
 indent_style = space
 # 缩进的大小 
 # tab_width: 设置整数用于指定替代tab的列数。默认值就是indent_size的值，一般无需指定。
-indent_size = 2
+indent_size = 4
 # 定义换行符 [lf | cr | crlf]
 end_of_line = lf
 # 文件是否以一个空白行结尾 [true | false]

@@ -1,5 +1,5 @@
 import ApiManage from 'api-manage'
-import axios from 'axios'
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 import { createApiList } from '@/api.config'
 
 const apiFiles = import.meta.globEager('../apis/*.ts')
@@ -10,12 +10,13 @@ const service: any = axios.create({
 })
 
 service.interceptors.request.use(
-    (config: any) => config,
-    (error: any) => Promise.reject(error)
+    (config: AxiosRequestConfig) => config,
+    (error: AxiosError) => Promise.reject(error)
 )
+
 service.interceptors.response.use(
-    (response: any) => response,
-    (error: any) => Promise.reject(error)
+    (response: AxiosResponse<any>) => response,
+    (error: AxiosError) => Promise.reject(error)
 )
 
 export const serviceList = new ApiManage({
@@ -26,10 +27,13 @@ export const serviceList = new ApiManage({
     list: createApiList(Object.values(apiFiles).map((v) => v.default)),
 
     // 请求验证
-    validate: () => true,
+    validate: (res: AxiosResponse<any>) => {
+        const success = res.data.code === 0
+        return success
+    },
 
     // 提取 response
-    limitResponse: (res) => res?.data?.data,
+    limitResponse: (res: AxiosResponse<any>) => res.data?.data,
 }).getService()
 
 /**

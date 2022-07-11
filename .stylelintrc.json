@@ -1,0 +1,29 @@
+{
+    "root": true,
+    "extends": [
+        "stylelint-config-standard-scss",
+        "stylelint-config-recommended-vue/scss",
+        "stylelint-config-recess-order"
+    ],
+    "rules": {
+        "declaration-colon-space-before": "never",
+        "declaration-colon-space-after": "always-single-line",
+        "indentation": 4,
+        "at-rule-no-unknown": [
+            true,
+            { "ignoreAtRules": ["mixin", "extend", "content", "include"] }
+        ],
+        "rule-empty-line-before": ["never"],
+        "selector-pseudo-element-no-unknown": [
+            true,
+            {
+                "ignorePseudoElements": ["v-deep"]
+            }
+        ],
+        "selector-class-pattern": null,
+        "no-duplicate-selectors": null,
+        "no-descending-specificity": null,
+        "string-quotes": "single",
+        "declaration-block-trailing-semicolon": null
+    }
+}

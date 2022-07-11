@@ -12,19 +12,16 @@
         "isolatedModules": true,
         "esModuleInterop": true,
         "lib": ["esnext", "dom"],
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
         "skipLibCheck": true,
         "paths": {
             "@/*": ["src/*"]
         },
-        "types": ["vite/client"]
+        "types": ["vite/client", "@types/node"]
     },
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.d.ts",
-        "src/**/*.tsx",
-        "src/**/*.vue",
-        "src/env.d.ts"
-    ],
+    "include": ["src"],
     "vueCompilerOptions": {
         "experimentalDisableTemplateSupport": true
     },

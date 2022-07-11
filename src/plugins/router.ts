@@ -1,9 +1,5 @@
-import {
-    createRouter,
-    createWebHashHistory,
-    createWebHistory,
-} from 'vue-router'
-import Home from '@/containers/views/Home.vue' // 引入 Home页面组件
+import { createRouter, createWebHashHistory } from 'vue-router'
+import Home from '@/containers/views/Home/index.vue' // 引入 Home页面组件
 
 //
 const routes = [
@@ -15,7 +11,7 @@ const routes = [
     {
         path: '/about',
         name: 'About',
-        component: () => import('@/containers/views/About.vue'),
+        component: () => import('@/containers/views/About/index.vue'),
     },
 ]
 

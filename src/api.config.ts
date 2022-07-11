@@ -10,7 +10,11 @@ import ApiManage from 'api-manage'
 
 export const serverParams = {
     // 目录清单注入server
-    server: ['/proxyMockApi'][0],
+    server: process.env._DATA_MOCK_
+        ? '/proxyMockApi'
+        : process.env.VITE_MODE === 'development'
+        ? ['/proxyMockApi', '/proxyApi'][0]
+        : process.env.VITE_SERVER_REQUEST_URL,
 }
 
 export type ServerParams = typeof serverParams

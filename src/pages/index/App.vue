@@ -2,7 +2,6 @@
 
 <template>
     <router-view />
-    <div>dd</div>
 </template>
 
 <style>

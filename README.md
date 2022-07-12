@@ -1,4 +1,4 @@
-# Vue 3 + TypeScript + Vite
+# Vue 3 + TypeScript + Vite + Pinia
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
@@ -14,3 +14,46 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
 
 You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+
+
+### 启动开发服务器
+
+```sh
+yarn dev
+# or
+npm run dev
+```
+
+### 启动开发服务以及数据模拟服务
+
+```sh
+yarn start
+# or
+npm run start
+``` 
+
+### 启动数据模拟服务
+
+```sh
+yarn mock
+# or
+npm run mock
+```
+
+
+### 打包(预生产)
+
+```sh
+yarn build:staging
+# or
+npm run build:staging
+```
+
+
+### 打包(生产)
+
+```sh
+yarn build
+# or
+npm run build
+```

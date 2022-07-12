@@ -4,22 +4,12 @@ const globby = require('globby')
 const path = require('path')
 const { mock } = require('mockjs')
 const { bindApi } = require('api-manage')
+const { transferApiManageList } = require('data-mock/lib/utils/tools')
 const { serverParams } = require('../api.config.ts')
-
-const extractApi = (data) => {
-    return Object.entries(data).reduce((r, [method, apis]) => {
-        return Object.entries(apis).reduce((r2, [apiName, apiPath]) => {
-            return {
-                ...r2,
-                [apiName]: `${method} ${apiPath}`,
-            }
-        }, r)
-    }, {})
-}
 
 module.exports = {
     // 载入api目录清单
-    api: extractApi(
+    api: transferApiManageList(
         bindApi(
             globby
                 .sync([path.resolve(__dirname, '..', 'apis', '*.ts')])

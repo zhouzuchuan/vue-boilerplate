@@ -4,6 +4,7 @@ module.exports = {
         node: true,
         browser: true,
     },
+
     extends: [
         'plugin:vue/recommended',
         'eslint:recommended',

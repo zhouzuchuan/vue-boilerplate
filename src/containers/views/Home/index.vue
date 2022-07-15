@@ -86,20 +86,16 @@ appStore.getList()
 .logo {
     font-size: 16em;
 }
-
 a {
     color: var(--v-primary-base);
 }
-
 h3 {
     margin: 40px 0 0;
 }
-
 ul {
     padding: 0;
     list-style-type: none;
 }
-
 li {
     display: inline-block;
     margin: 0 10px;

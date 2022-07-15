@@ -1,17 +1,17 @@
 import { defineStore } from 'pinia'
-import { serviceList } from '@/plugins/api'
+import { reactive } from 'vue'
+import { useApi } from '@/plugins/api'
 
-const { serveHome_QueryPackageList } = serviceList
-
-export const useApp_Store = defineStore('app', {
-    state: () => ({
+export const useApp_Store = defineStore('app', () => {
+    const { serveHome_QueryPackageList } = useApi()
+    const state = reactive({
         packageList: [[], []] as any[][],
-    }),
+    })
 
-    actions: {
+    return {
         async getList() {
             const result = await serveHome_QueryPackageList()
-            this.packageList = result
+            state.packageList = result
         },
-    },
+    }
 })

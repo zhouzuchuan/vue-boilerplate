@@ -1,17 +1,33 @@
-// const { Random } = require('mockjs')
+const { mock } = require('mockjs')
 
 const {
-    DM: {
-        api: { apiHome_QueryPackageList },
-        relypackageList,
-        packageList,
-
-        returnAcition,
-    },
-} = global
+    apis: { apiHome_QueryPackageList, apiHome_GetTitle },
+    sendResult,
+} = DM
 
 module.exports = {
     [apiHome_QueryPackageList]: (req, res) => {
-        returnAcition(res, [packageList, relypackageList])
+        sendResult(res, [
+            mock({
+                'a|3-6': [
+                    {
+                        name: '@name',
+                        src: '@url',
+                    },
+                ],
+            }).a,
+            mock({
+                'a|5-13': [
+                    {
+                        name: '@name',
+                        src: '@url',
+                    },
+                ],
+            }).a,
+        ])
+    },
+
+    [apiHome_GetTitle]: (req, res) => {
+        sendResult(res, '@cparagraph')
     },
 }

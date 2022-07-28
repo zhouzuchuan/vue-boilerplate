@@ -1,17 +1,38 @@
 import { defineStore } from 'pinia'
-import { reactive } from 'vue'
+import { reactive, toRefs } from 'vue'
 import { useApi } from '@/plugins/api'
 
 export const useApp_Store = defineStore('app', () => {
-    const { serveHome_QueryPackageList } = useApi()
+    const { serveHome_QueryPackageList, serveHome_GetTitle } = useApi()
+
     const state = reactive({
         packageList: [[], []] as any[][],
+
+        title: '',
     })
 
     return {
-        async getList() {
-            const result = await serveHome_QueryPackageList()
-            state.packageList = result
+        ...toRefs(state),
+        async requestInit() {
+            const [titleResult, packageResult] = await Promise.all([
+                serveHome_GetTitle(
+                    {
+                        userId: 1024,
+                    },
+                    {
+                        tplData: {
+                            id: 9527,
+                            platform: 'Vue',
+                        },
+                    }
+                ),
+                serveHome_QueryPackageList({
+                    userId: 1024,
+                }),
+            ])
+
+            state.packageList = packageResult
+            state.title = titleResult
         },
     }
 })

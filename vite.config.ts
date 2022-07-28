@@ -12,17 +12,25 @@ const multipleEntryPaths = globby
     .sync([path.join('src', 'pages', '*', 'index.html')], {
         cwd: process.cwd(),
     })
-    .reduce((result, pathStr) => {
-        const entryName = path.parse(pathStr).dir.split('/').pop()
-        return {
+    .reduce(
+        (result, pathStr) => ({
             ...result,
-            [entryName]: path.resolve(__dirname, pathStr),
-        }
-    }, {})
+            [path.parse(pathStr).dir.split('/').pop()]: path.resolve(
+                __dirname,
+                pathStr
+            ),
+        }),
+        {}
+    )
 
 // https://vitejs.dev/config/
 export default ({ mode }) => {
     const { VITE_SERVER_REQUEST_URL } = loadEnv(mode, process.cwd())
+
+    const rewriteProxyMap = {
+        '^/proxyMockApi': 'http://localhost:1024',
+        '^/proxyApi': VITE_SERVER_REQUEST_URL,
+    }
 
     const plugins = [vue()]
 
@@ -56,20 +64,19 @@ export default ({ mode }) => {
             },
         },
         plugins,
-
         server: {
-            proxy: {
-                '^/proxyMockApi': {
-                    target: 'http://localhost:2222',
-                    changeOrigin: true,
-                },
-
-                '^/proxyApi': {
-                    target: VITE_SERVER_REQUEST_URL,
-                    changeOrigin: true,
-                    rewrite: (path: string) => path.replace(/^\/proxyApi/, ''),
-                },
-            },
+            proxy: Object.entries(rewriteProxyMap).reduce(
+                (r, [k, v]) => ({
+                    ...r,
+                    [k]: {
+                        target: v,
+                        changeOrigin: true,
+                        rewrite: (path: string) =>
+                            path.replace(new RegExp(k), ''),
+                    },
+                }),
+                {}
+            ),
         },
     })
 }

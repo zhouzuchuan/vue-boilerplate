@@ -9,7 +9,7 @@ const { serverParams } = require('../api.config.ts')
 
 module.exports = {
     // 载入api目录清单
-    api: transferApiManageList(
+    apis: transferApiManageList(
         bindApi(
             globby
                 .sync([path.resolve(__dirname, '..', 'apis', '*.ts')])
@@ -18,8 +18,8 @@ module.exports = {
         )
     ),
     // 接口返回统一格式
-    returnAcition(res, data = [], options = {}) {
-        const { delay = 1000, otherOpt } = options
+    sendResult(res, data = [], options = {}) {
+        const { delay = 1000, ...otherOpt } = options
         setTimeout(
             () =>
                 res.json(

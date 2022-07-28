@@ -9,7 +9,7 @@
         "build:staging": "tsc && vite build --mode staging && node move_html.js",
         "preview": "vite preview",
         "start": "npm run mock & npm run dev",
-        "mock": "dm server -t ./src/mocks/ -w ./src/apis/ -p 2222",
+        "mock": "dm server -t ./src/mocks/ -w ./src/apis/ -p 1024",
         "lint:js": "eslint 'src/**/*.{vue,ts}' --fix",
         "lint:css": "stylelint 'src/**/*.{vue,css,scss}' --allow-empty-input --fix",
         "lint": "npm run lint:css && npm run lint:js",

@@ -9,9 +9,12 @@ import path from 'path'
 const resolve = (dir: string) => path.join(__dirname, dir)
 
 const multipleEntryPaths = globby
-    .sync([path.join('src', 'pages', '*', 'index.html')], {
-        cwd: process.cwd(),
-    })
+    .sync(
+        [path.join('src', 'pages', '*', 'index.html').split('\\').join('/')],
+        {
+            cwd: process.cwd(),
+        }
+    )
     .reduce(
         (result, pathStr) => ({
             ...result,

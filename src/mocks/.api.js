@@ -12,7 +12,12 @@ module.exports = {
     apis: transferApiManageList(
         bindApi(
             globby
-                .sync([path.resolve(__dirname, '..', 'apis', '*.ts')])
+                .sync([
+                    path
+                        .resolve(__dirname, '..', 'apis', '*.ts')
+                        .split('\\')
+                        .join('/'),
+                ])
                 .map((v) => require(v).default),
             serverParams
         )

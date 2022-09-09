@@ -4,17 +4,18 @@
     "version": "1.0.0",
     "description": "vite + ts + vue3 + pinia",
     "scripts": {
-        "dev": "vite",
+        "dev": "vite --host",
         "build": "vue-tsc --noEmit && vite build && node move_html.js",
         "build:staging": "tsc && vite build --mode staging && node move_html.js",
         "preview": "vite preview",
-        "start": "npm run mock & npm run dev",
+        "start": "concurrently \"npm run mock\"  \"npm run dev\"",
         "mock": "dm server -t ./src/mocks/ -w ./src/apis/ -p 1024",
         "lint:js": "eslint 'src/**/*.{vue,ts}' --fix",
         "lint:css": "stylelint 'src/**/*.{vue,css,scss}' --allow-empty-input --fix",
         "lint": "npm run lint:css && npm run lint:js",
         "prepare": "husky install",
-        "postinstall": "npx husky install"
+        "postinstall": "npx husky install",
+        "commit": "git-cz"
     },
     "dependencies": {
         "api-manage": "^2.3.0",
@@ -34,6 +35,7 @@
         "@vitejs/plugin-vue": "^2.3.3",
         "@vue/eslint-config-prettier": "^7.0.0",
         "commitizen": "^4.2.4",
+        "concurrently": "^7.4.0",
         "customize-cra": "^1.0.0",
         "cz-customizable": "^6.9.0",
         "data-mock": "^2.2.1",
